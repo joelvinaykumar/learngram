@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+  backend:
+    build: ./learngram-assignment
+    volumes: 
+      - ./learngram-assignment:/usr/src/app
+    ports: 
+      - 5000:80
+
+  frontend:
+    build: ./learngram-fe
+    volumes: 
+      - ./learngram-fe:/usr/src/app
+    ports: 
+      - 3000:80
