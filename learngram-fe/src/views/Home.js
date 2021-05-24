@@ -70,16 +70,9 @@ export const Home = () => {
   }
 
   const handleClear = () => {
-    if (videos.length > 0) {
-      console.log('kjgchbkjb ', videos[0])
-      setFileSource(videos[0].storage_url);
-      setFileName(videos[0].title);
-      setFileType(videos[0].content_type);
-    } else {
-      setFileName('');
-      setFileSource(null);
-      setFileType(null);
-    }
+    setFileName('');
+    setFileSource(null);
+    setFileType(null);
   };
 
   const fireApis = async () => {
@@ -129,6 +122,7 @@ export const Home = () => {
         {videos.length > 0
           ? videos.map(({ _id, title, storage_url, content_type }) => (
               <VideoThumbnail
+                key={_id}
                 title={title}
                 deleteAction={() => handleVideoDelete(_id)}
                 onClick={() => handleVideoClick(title, storage_url, content_type)}

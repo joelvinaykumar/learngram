@@ -46,7 +46,7 @@ const Container = styled.div`
 const InsideContainer = styled.div`
   background-color: ${theme.overlay};
   background-opacity: 0.1;
-  padding: 100px 0 170px 150px;
+  padding: 100px 0 55px 150px;
 `;
 
 const FormContainer = styled.div`

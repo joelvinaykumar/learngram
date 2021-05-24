@@ -38,7 +38,6 @@ export class UserService {
   async validateUser(email: string, password: string) {
     try {
       const user = await this.userModel.findOne({ email });
-      Logger.log(email, 'email')
       if (user) {
         const success = await Compare(process.env.PASS_KEY, password, user.password);
         if (success) {
