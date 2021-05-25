@@ -18,16 +18,7 @@ services:
       - "5000:5000"
     networks:
       - mern-app
-    depends_on:
-      - mongo
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    networks:
-      - mern-app
-    volumes:
-      - mongo-data:/data/db
+
 networks:
   mern-app:
     driver: bridge
